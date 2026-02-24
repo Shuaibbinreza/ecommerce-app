@@ -36,9 +36,25 @@ class AuthController extends Controller
                 return redirect($redirectUrl . '?token=' . $jwt);
             }
 
-            return response()->json(['token' => $jwt]);
+            // Redirect to special products page after login
+            return redirect('/special-products');
         }
 
         return back()->withErrors(['Invalid credentials']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
+    }
+
+    public function specialProducts(Request $request)
+    {
+        // Auth is checked at route level via 'auth' middleware
+        // If we reach here, user is authenticated
+        $user = Auth::user();
+        
+        return view('special-products', compact('user'));
     }
 }
