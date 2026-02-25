@@ -233,35 +233,6 @@
             font-weight: 500;
         }
         
-        .social-login {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-        
-        .btn-social {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            background: white;
-            color: #374151;
-            font-weight: 500;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-social:hover {
-            border-color: #667eea;
-            background: #f5f3ff;
-            color: #667eea;
-        }
-        
         .register-link {
             text-align: center;
             color: #6b7280;
@@ -373,23 +344,8 @@
                         <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
                     </button>
                     
-                    <div class="divider">
-                        <span>or continue with</span>
-                    </div>
-                    
-                    <div class="social-login">
-                        <button type="button" class="btn-social">
-                            <i class="bi bi-google"></i>
-                            Google
-                        </button>
-                        <button type="button" class="btn-social">
-                            <i class="bi bi-facebook"></i>
-                            Facebook
-                        </button>
-                    </div>
-                    
                     <div class="register-link">
-                        <p class="mb-0">Don't have an account? <a href="#">Create one</a></p>
+                        <p class="mb-0">Don't have an account? <a href="{{ route('register') }}">Create one</a></p>
                     </div>
                 </form>
             </div>

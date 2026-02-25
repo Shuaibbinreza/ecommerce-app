@@ -231,6 +231,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-person me-1"></i> Login</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}"><i class="bi bi-person-plus me-1"></i> Register</a>
+                        </li>
                     @endauth
                 </ul>
             </div>
