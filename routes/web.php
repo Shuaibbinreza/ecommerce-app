@@ -3,18 +3,22 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/login', [AuthController::class, 'showLogin']);
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Products (public)
+// Products - Open for all
+Route::get('/', function () {
+    return view('products');
+})->name('products');
+
 Route::get('/products', function () {
     return view('products');
-});
+})->name('products');
 
-// Special Products - Authentication checked at route level using 'auth' middleware
-Route::get('/special-products', [AuthController::class, 'specialProducts'])->middleware('auth');
+// Special Products - Requires authentication
+Route::get('/special-products', [AuthController::class, 'specialProducts'])->middleware('auth')->name('special-products');
